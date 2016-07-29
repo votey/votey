@@ -60,10 +60,10 @@
 
   <pages>
   	<page name="votes"></page>
-  	<!--<page name="elections"></page>
+  	<page name="elections"></page>
   	<page name="community"></page>
   	<page name="voterToken"></page>
-  	<page name="avatarLogin"></page>-->
+  	<!--<page name="avatarLogin"></page>-->
   </pages>
   <properties>
     <property name="applicationID">

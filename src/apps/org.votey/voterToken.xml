@@ -8,9 +8,9 @@
         if (StringTools.notEmpty(token)){
             Tools.safe(token);
             query = "{'token':'"+token+"'}";
-            res = backend.getAll("votey", "votes", query, 0, 1000);
+            res = backend.getAll("votey", "voterToken", query, 0, 1000);
         } else {
-            res = backend.getAll("votey", "votes", "{}", 0, 1000);
+            res = backend.getAll("votey", "voterToken", "{}", 0, 1000);
         }
         event.returnSource(res, false, "application/json");
       } catch (Throwable t) {
@@ -24,7 +24,7 @@
       UserRESTHelper backend = getBackend();
       try {
           String res = backend.post("votey",
-                                    "votes",
+                                    "voterToken",
                                     event.getRequestBody());
           event.returnSource(res, false, "application/json");
           return;
@@ -39,7 +39,7 @@
       UserRESTHelper backend = getBackend();
       try {
          res = backend.put( "votey",
-                            "votes",
+                            "voterToken",
                              event.getRequestBody(),
                              false,
                              false);
@@ -56,17 +56,17 @@
   <htmlsrc browser="*"><![CDATA[
 <HTML>
   <HEAD>
-    <TITLE>votes service</TITLE>
+    <TITLE>voterToken service</TITLE>
   </HEAD>
-  <BODY id="votes" name="votes">
-    Something went wrong accessing the web service for /votes which should have returned JSON data.
+  <BODY id="voterToken" name="voterToken">
+    Something went wrong accessing the web service for /voterToken which should have returned JSON data.
   </BODY>
 </HTML>
 ]]></htmlsrc>
   <properties>
     <property name="name">
       <readOnly>true</readOnly>
-      <value>votes</value>
+      <value>voterToken</value>
     </property>
     <property name="type">
       <readOnly>true</readOnly>
