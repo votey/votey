@@ -14,14 +14,6 @@
     import org.apache.commons.fileupload.*; 
     import com.mongodb.*;
     import com.mongodb.gridfs.*;
-    
-    //============== getBackend() ==========================
-    UserRESTHelper getBackend(){    
-        UserRESTHelper backend = new UserRESTHelper();
-        backend.setup("anarchia", "bob", "MangoDog");
-        return backend;
-    }
-    
   ]]></event>
 
   <event language="beanshell" name="application_queryNextPage"><![CDATA[
@@ -29,31 +21,10 @@
   ]]></event>
 
   <event language="beanshell" name="application_onAction"><![CDATA[
-    System.out.println("===::  anarchia-author application.xml :: "+session.getPathInfo());
+    System.out.println("===::  votey admin application.xml :: "+session.getPathInfo());
   ]]></event>
   
-  <event language="beanshell" name="GET" ><![CDATA[
-  ]]></event>
-  <event language="beanshell" name="POST" ><![CDATA[
-  ]]></event>
-  <event language="beanshell" name="PUT" ><![CDATA[
-  ]]></event>
-  <event language="beanshell" name="DELETE" ><![CDATA[
-  ]]></event>
-  <event language="beanshell" name="LIST" ><![CDATA[
-  ]]></event>
-
-
-
-
-
-
   <pages>
-  	<page name="addPanel"></page>
-  	<page name="addFile"></page>
-  	<page name="files"></page>
-  	<page name="showImages"></page>
-  	<page name="reorderStory"></page>
   </pages>
   <properties>
     <property name="applicationID">
@@ -74,7 +45,7 @@
       <value>true</value>
     </property>
     <property name="title">
-      <value>Anarchia Admin Interface</value>
+      <value>Votey.org Admin Interface</value>
     </property>
     <property name="type">
       <readOnly>true</readOnly>
