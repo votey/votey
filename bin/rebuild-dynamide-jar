@@ -1,0 +1,3 @@
+pushd $DYNAMIDE_HOME; ant jar; popd
+cp     $DYNAMIDE_HOME/build/lib/dynamide.jar $DYNAMIDE_HOME/build/tomcat/webapps/ROOT/WEB-INF/lib/dynamide.jar
+ls -la $DYNAMIDE_HOME/build/lib/dynamide.jar $DYNAMIDE_HOME/build/tomcat/webapps/ROOT/WEB-INF/lib/dynamide.jar

@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE dynamideForm>
+<dynamideForm>
+  <event language="beanshell" name="GET" ><![CDATA[
+     UserRESTHelper backend = getBackend();
+     try {
+        String token = event.getQueryParam("token");
+        if (StringTools.notEmpty(token)){
+            Tools.safe(token);
+            query = "{'token':'"+token+"'}";
+            res = backend.getAll("votey", "votes", query, 0, 1000);
+        } else {
+            res = backend.getAll("votey", "votes", "{}", 0, 1000);
+        }
+        event.returnSource(res, false, "application/json");
+      } catch (Throwable t) {
+        returnErrorJSON(t, event);
+      } finally {
+        backend.close();
+      }
+  ]]></event>
+
+  <event language="beanshell" name="POST" ><![CDATA[
+      UserRESTHelper backend = getBackend();
+      try {
+          String res = backend.post("votey",
+                                    "votes",
+                                    event.getRequestBody());
+          event.returnSource(res, false, "application/json");
+          return;
+      } catch (Throwable t) {
+          returnErrorJSON(t, event);
+      } finally {
+          backend.close();
+      }
+  ]]></event>
+
+  <event language="beanshell" name="PUT" ><![CDATA[
+      UserRESTHelper backend = getBackend();
+      try {
+         res = backend.put( "votey",
+                            "votes",
+                             event.getRequestBody(),
+                             false,
+                             false);
+         event.returnSource(res, false, "application/json");
+      } catch (Throwable t) {
+         returnErrorJSON(t, event);
+      } finally {
+         backend.close();
+      }
+  ]]></event>
+
+  <widgets>
+    <widget id="session1">
+      <properties>
+        <property name="type">
+          <value>com.dynamide.session</value>
+        </property>
+      </properties>
+    </widget>
+    <widget id="hiddenPageID">
+      <properties>
+        <property name="field">
+          <value>page</value>
+        </property>
+        <property name="type">
+          <value>com.dynamide.hidden</value>
+        </property>
+        <property name="value">
+          <datatype>com.dynamide.datatypes.WebmacroDatatype</datatype>
+          <value>$pageID</value>
+        </property>
+      </properties>
+    </widget>
+  </widgets>
+  <htmlsrc browser="*"><![CDATA[
+<HTML>
+  <HEAD>
+    <TITLE>$page.title</TITLE>
+    <script src="/anarchia/js/jquery-2.1.3.min.js"></script>
+    <script src="/anarchia/js/anarchia.js"></script>
+  </HEAD>
+  <BODY id="page1" bottomMargin="15" leftMargin="10" topMargin="15" rightMargin="10" name="addPanel">
+    <P>Add Panel v2</P>
+    <FORM name="form$pageID" accept-charset="UNKNOWN" action="$session.applicationURI" method="POST" encType="application/x-www-form-urlencoded">
+      <SPAN class="widget" id="hiddenPageID"/>
+    </FORM>
+  </BODY>
+</HTML>
+]]></htmlsrc>
+  <properties>
+    <property name="formAction">
+      <value>mojoAction</value>
+    </property>
+    <property name="formName">
+      <value></value>
+    </property>
+    <property name="name">
+      <readOnly>true</readOnly>
+      <value>votes</value>
+    </property>
+    <property name="title">
+      <value>votes</value>
+    </property>
+    <property name="type">
+      <readOnly>true</readOnly>
+      <value>pagetypes/com.dynamide.page</value>
+    </property>
+  </properties>
+</dynamideForm>

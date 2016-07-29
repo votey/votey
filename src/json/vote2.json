@@ -1,0 +1,7 @@
+{
+    "token":"A102",
+    "electionID": "CA:Alameda:201606",
+    "choices":{"President":"Hillary", "BART Board": ["Frankenstein"]},
+    "date":"20160601",
+    "signature":"987654"
+}
