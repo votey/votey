@@ -1,0 +1,19 @@
+{
+  "electionID": "CA:Alameda:20161108",
+  "template": {
+    "choices": [
+      {
+        "choice": {
+          "title": "President",
+          "select": [
+            "Bernie",
+            "Hillary",
+            "Donald"
+          ]
+        }
+      }
+    ]
+  },
+  "fromDate": "20160101",
+  "toDate": "20161108"
+}

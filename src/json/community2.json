@@ -1,0 +1,18 @@
+{
+  "avatarID": "ca.berkeley.laramie",
+  "publishedTokens": "A101",
+  "profile": {
+    "name": "Bob Smith"
+  },
+  "sponsor": "org.votey",
+  "positions": [
+    {
+      "title": "Bernie or Bust",
+      "url": "http://laramie.com/posts/77"
+    },
+    {
+      "title": "Support CA Initiative 9",
+      "url": "http://laramie.com/posts/204"
+    }
+  ]
+}

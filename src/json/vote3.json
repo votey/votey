@@ -1,6 +1,6 @@
 {
     "token":"A103",
-    "electionID": "CA:Alameda:201606",
+    "electionID": "CA:Alameda:20161108",
     "choices":{"President":"Trump", "BART Board": ["Mussolini", "Putin"]},
     "date":"20160601",
     "signature":"f5f4f3"

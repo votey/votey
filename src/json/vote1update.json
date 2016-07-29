@@ -1,6 +1,6 @@
 {
     "token":"A101",
-    "electionID": "CA:Alameda:2016067",
+    "electionID": "CA:Alameda:20161108",
     "choices":{"President":"Bernie", "BART Board": ["Mary Shelly"]},
     "date":"20160601",
     "signature":"1234555555UPIDA101",

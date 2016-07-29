@@ -4,3 +4,5 @@
 
 . populate-votes.bash
 . update-votes.bash
+. populate-elections.bash
+. populate-community.bash

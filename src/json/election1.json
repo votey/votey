@@ -1,0 +1,33 @@
+{
+  "electionID": "CA:SanFrancisco:20161108",
+  "template": {
+    "choices": [
+      {
+        "choice": {
+          "title": "President",
+          "select": [
+            "Bernie",
+            "Hillary",
+            "Donald",
+            "Jill",
+            "Gary"
+          ]
+        }
+      },
+      {
+        "choice": {
+          "title": "Mayor",
+          "select": [
+            "Ed",
+            "Kent",
+            "Reed",
+            "Stuart",
+            "Amy"
+          ]
+        }
+      }
+    ]
+  },
+  "fromDate": "20160101",
+  "toDate": "20161108"
+}
