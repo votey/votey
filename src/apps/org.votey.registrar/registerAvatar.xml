@@ -3,26 +3,10 @@
 <dynamideForm>
 
   <event language="beanshell" name="POST" ><![CDATA[
-  System.out.println("@@@@@ in POST registerAvatar");
       MongoREST getLoginBackend(){
           MongoREST backend = new MongoREST();
           backend.setup("security_realm", "mongoSecurityRealmUser", "Laramie33");
           return backend;
-      }
-
-      String calcSHA(String password){
-          messageDigest = java.security.MessageDigest.getInstance("SHA-256");
-          messageDigest.update(password.getBytes());
-          byteData = messageDigest.digest();
-          //Convert byte data to hex format
-          StringBuffer hexString = new StringBuffer();
-          for (int i = 0; i < byteData.length; i++) {
-              String hex=Integer.toHexString(0xff & byteData[i]);
-              if (hex.length()==1)
-                  hexString.append('0');
-              hexString.append(hex);
-          }
-          return hexString.toString();
       }
 
       MongoREST loginBackend = getLoginBackend();
