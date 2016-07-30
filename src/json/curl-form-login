@@ -1,0 +1,9 @@
+## do it this way to see debug info on subshell:
+##    (set -x; curl "$VOTEY_HOST.....
+
+(curl "$VOTEY_HOST/votey/votes" -c ./cookies &> /dev/null )
+(curl "$VOTEY_HOST/votey/votes/j_security_check" -c ./cookies -b ./cookies -X POST --data "j_username=$VOTEY_API_USER&j_password=$VOTEY_API_PASSWORD"  -D - &> /dev/null )
+echo Now you may use curl with the ./cookies file to get any additional resources, e.g.:
+echo
+echo "    curl '$VOTEY_HOST/votey/votes' -b ./cookies -c ./cookies"
+echo

@@ -7,6 +7,7 @@
     import com.dynamide.util.*;
     import com.dynamide.Widget;
     import com.dynamide.datatypes.*;
+    import com.dynamide.db.MongoREST;
     import com.nebhale.jsonpath.JsonPath;
     import com.dynamide.db.MongoREST;
     import com.mongodb.util.JSON;
@@ -60,14 +61,11 @@
 
   <pages>
   	<page name="welcome" default="true"></page>
-  	<page name="votes"></page>
-  	<page name="elections"></page>
-  	<page name="community"></page>
-  	<page name="voterToken"></page>
+  	<page name="registerAvatar"></page>
   </pages>
   <properties>
     <property name="applicationID">
-      <value>org.votey</value>
+      <value>org.votey.registrar</value>
     </property>
     <property name="defaultLanguage">
       <value>en-us</value>

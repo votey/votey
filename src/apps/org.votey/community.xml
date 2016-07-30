@@ -2,7 +2,7 @@
 <!DOCTYPE dynamideForm>
 <dynamideForm>
   <event language="beanshell" name="GET" ><![CDATA[
-     UserRESTHelper backend = getBackend();
+     MongoREST backend = getBackend();
      try {
         String avatarID = event.getQueryParam("avatarID");
         if (StringTools.notEmpty(avatarID)){
@@ -21,7 +21,7 @@
   ]]></event>
 
   <event language="beanshell" name="POST" ><![CDATA[
-      UserRESTHelper backend = getBackend();
+      MongoREST backend = getBackend();
       try {
           String res = backend.post("votey",
                                     "community",
@@ -36,7 +36,7 @@
   ]]></event>
 
   <event language="beanshell" name="PUT" ><![CDATA[
-      UserRESTHelper backend = getBackend();
+      MongoREST backend = getBackend();
       try {
          res = backend.put( "votey",
                             "community",
